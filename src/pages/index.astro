@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from "../components/Header.astro"
+import Banner from "../components/react/Banner.tsx"
 ---
 
 <Layout title="Gonzalo Chalé - Ingeniero en sistemas.">
@@ -9,7 +10,7 @@ import Header from "../components/Header.astro"
 		  <Header />
 		</section>
 		<section class="relative w-full min-h-dvh flex flex-col justify-center items-center gap-3">
-		 
+		<Banner client:load/>
 		  <div class="absolute max-lg:hidden container border-dashed border-l border-r min-h-dvh max-w-2xl guides-container-y"></div>
 		</section>
 	  </main>
