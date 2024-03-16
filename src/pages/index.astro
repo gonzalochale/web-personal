@@ -5,7 +5,14 @@ import Header from "../components/Header.astro";
 import Banner from "../components/react/Banner.jsx";
 ---
 
+{/*for now dark theme will be the default*/}
 <script is:inline>
+  document.documentElement.classList.add("dark");
+</script>
+
+{/*in case i need to handle the system theme*/}
+{
+  /*<script is:inline>
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -27,7 +34,8 @@ import Banner from "../components/react/Banner.jsx";
       attributeFilter: ["class"],
     });
   }
-</script>
+</script>*/
+}
 
 <Layout title="Gonzalo Chalé - Ingeniero en sistemas.">
   <main
