@@ -3,6 +3,37 @@ import "../globals.css";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Banner from "../components/react/Banner.jsx";
+import { Badge } from "../components/ui/badge";
+
+const Projects = [
+  {
+    title: "ChonzaUI",
+    description: "A collection of React components that I use in my projects.",
+    url: "https://chonza.vercel.app/",
+    tags: ["next-js", "tailwind-css", "framer-motion"],
+  },
+  {
+    title: "NextUI SaaS landing page",
+    description:
+      "This project is a starter template for SaaS applications landing page using Next.js 14, NextUI v2, and Tailwind CSS.",
+    url: "https://nextui-saas-template.vercel.app/",
+    tags: ["next-js", "tailwind-css", "next-ui", "framer-motion"],
+  },
+  {
+    title: "TailTint",
+    description:
+      "Elevate your web design with TailTint – where TailWindCSS meets simplicity for beautiful backgrounds",
+    url: "https://tailtint.vercel.app/",
+    tags: ["astro", "tailwind-css"],
+  },
+  {
+    title: "InKit",
+    description:
+      "Create free Copy-Paste Tailwind CSS components for your next project",
+    url: "https://inkit-ui.vercel.app/",
+    tags: ["next-js", "tailwind-css", "shad-cn"],
+  },
+];
 ---
 
 {/*for now dark theme will be the default*/}
@@ -51,6 +82,46 @@ import Banner from "../components/react/Banner.jsx";
       <div
         class="absolute max-lg:hidden container border-dashed border-l border-r min-h-dvh max-w-2xl guides-container-y"
       >
+      </div>
+    </section>
+    <section
+      class="relative w-full max-w-2xl pb-24 flex flex-col justify-center items-start gap-10"
+    >
+      <div>
+        <h2
+          class="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0"
+        >
+          Projects
+        </h2>
+        <p class="leading-7 text-muted-foreground text-balance">
+          I'm currently working on a few projects, some of them are private and
+          some are open source. I'll be updating this section with more details
+          soon.
+        </p>
+      </div>
+      <div class="flex flex-col gap-10">
+        {
+          Projects.map((project) => (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex flex-col gap-1"
+            >
+              <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+                {project.title}
+              </h3>
+              <p class="leading-7 text-muted-foreground text-balance">
+                {project.description}
+              </p>
+              <div class="flex gap-1">
+                {project.tags.map((tag, index) => (
+                  <Badge variant="default">{tag}</Badge>
+                ))}
+              </div>
+            </a>
+          ))
+        }
       </div>
     </section>
   </main>
