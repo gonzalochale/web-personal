@@ -3,11 +3,11 @@ import { useState, useEffect, useMemo } from "react";
 export default function Banner() {
   const words = useMemo(
     () => [
-      { text: "BRILLANTES" },
-      { text: "DIFERENTES" },
-      { text: "ORIGINALES" },
-      { text: "GENIALES" },
-      { text: "ESPECIALES" },
+      { text: "UNIQUE" },
+      { text: "COOL" },
+      { text: "GREAT" },
+      { text: "AWESOME" },
+      { text: "TOP" },
     ],
     []
   );
@@ -62,15 +62,8 @@ export default function Banner() {
       <section className="w-full border-dashed border-t border-b guides-container-x">
         <div className="px-4 tracking-tighter w-full flex justify-center items-center">
           <h1 className="w-full max-w-2xl max-lg:leading-[0.8] max-lg:text-5xl leading-[0.8] text-7xl font-bold max-lg:text-center text-muted-foreground">
-            CREANDO
+            BUILDING
           </h1>
-        </div>
-      </section>
-      <section className="w-full border-dashed border-t border-b guides-container-x">
-        <div className="px-4 tracking-tighter w-full flex justify-center items-center">
-          <h2 className="w-full max-w-2xl max-lg:leading-[0.8] leading-[0.8] max-lg:text-5xl text-7xl font-bold max-lg:text-center text-muted-foreground">
-            PRODUCTOS
-          </h2>
         </div>
       </section>
       <section className="w-full border-t border-dashed border-b guides-container-x">
@@ -101,6 +94,13 @@ export default function Banner() {
             ))}
             <span className="sr-only">{currentText.text}</span>
           </span>
+        </div>
+      </section>
+      <section className="w-full border-dashed border-t border-b guides-container-x">
+        <div className="px-4 tracking-tighter w-full flex justify-center items-center">
+          <h2 className="w-full max-w-2xl max-lg:leading-[0.8] leading-[0.8] max-lg:text-5xl text-7xl font-bold max-lg:text-center text-muted-foreground">
+            PRODUCTS
+          </h2>
         </div>
       </section>
     </>
